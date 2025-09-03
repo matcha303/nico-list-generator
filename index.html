@@ -33,6 +33,43 @@
         .output-actions button:hover { background-color: #218838; }
         .footer { text-align: center; margin-top: 3em; padding: 1em; color: #777; font-size: 0.9em; border-top: 1px solid #eee; }
         .disclaimer { font-size: 0.8em; color: #999; }
+        /* === ここからスマホ表示対応（レスポンシブデザイン）のためのコード === */
+        @media (max-width: 760px) {
+            /* 画面幅が760px以下の場合に、以下のスタイルを適用する */
+
+            /* テーブルの各パーツを、縦に並ぶ「ブロック」要素に変更する */
+            #preview-area .song-table,
+            #preview-area .song-table tbody,
+            #preview-area .song-table tr {
+                display: block;
+            }
+
+            /* タイトルセル(th)と画像セル(td)を、それぞれ独立したブロックとして表示する */
+            #preview-area .song-table th,
+            #preview-area .song-table td {
+                display: block;
+                width: 100%; /* 幅を画面いっぱいに広げる */
+                box-sizing: border-box; /* paddingやborderを幅計算に含める */
+            }
+
+            /* タイトル行(th)とサムネイル行(td)の間に少し隙間を空ける */
+            #preview-area .song-table th {
+                margin-bottom: 2px;
+            }
+
+            /* サムネイル行(td)の下に、次の曲との区切り線を入れる */
+            #preview-area .song-table td {
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                background-color: #fff; /* 背景を白にして見やすくする */
+            }
+
+            /* 画像が縦に長くなりすぎないように高さを制限する */
+            #preview-area .song-table td img {
+                max-height: 250px;
+            }
+        }
+        /* === スマホ表示対応ここまで === */
     </style>
 </head>
 <body>
