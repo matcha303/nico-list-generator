@@ -201,7 +201,7 @@
             mylistStatus.style.color = 'black';
             try {
                 const rssUrl = `https://www.nicovideo.jp/mylist/${mylistId}?rss=2.0`;
-		const proxyUrl = \https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}\`;`
+                const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`;
                 const response = await fetch(proxyUrl);
                 if (!response.ok) throw new Error("マイリスト情報の取得に失敗しました。");
                 const xmlText = await response.text();
@@ -233,7 +233,7 @@
          */
         async function fetchVideoInfo(videoId) {
             const originalApiUrl = `https://ext.nicovideo.jp/api/getthumbinfo/${videoId}`;
-	    const apiUrl = \https://api.allorigins.win/raw?url=${encodeURIComponent(originalApiUrl)}\`;`            
+            const apiUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(originalApiUrl)}`;
             try {
                 const response = await fetch(apiUrl);
                 if (!response.ok) throw new Error('API response failed');
